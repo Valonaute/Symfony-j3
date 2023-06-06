@@ -1,0 +1,41 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+home:
+    path: /
+    controller: App\Controller\HomeController::showHome
+
+address:
+    path: /address
+    controller: App\Controller\AddressController::showAddress
+
+createaddress:
+    path: /createaddress
+    controller: App\Controller\AddressController::createAddress
+
+updateaddress:
+    path: /updateaddress/{id}
+    controller: App\Controller\AddressController::updateAddress
+
+deleteaddress:
+    path: /deleteaddress/{id}
+    controller: App\Controller\AddressController::deleteAddress
+
+customers:
+    path: /customers
+    controller: App\Controller\CustomerController::showCustomers
+
+createcustomer:
+    path: /createcustomer
+    controller: App\Controller\CustomerController::createCustomer
+
+updatecustomer:
+    path: /updatecustomer/{id}
+    controller: App\Controller\CustomerController::updateCustomer
+
+deletecustomer:
+    path: /deletecustomer/{id}
+    controller: App\Controller\CustomerController::deleteCustomer

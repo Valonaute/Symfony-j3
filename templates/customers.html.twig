@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{%  block content %}
+<p>Vous êtes sur la page des clients </p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for onecustomer in customers %}
+    <tr>
+      <th scope="row">{{onecustomer.id}}</th>
+      <td>{{onecustomer.lastname}}</td>
+      <td>{{onecustomer.firstname}}</td>
+      <td>{{onecustomer.email}}</td>
+      <td><a class="btn btn-warning m-1" href="{{ path ('updatecustomer', {id: onecustomer.id})}}">modifier le client</a>
+          <a class="btn btn-danger  m-1" href="{{ path ('deletecustomer', {id: onecustomer.id})}}">supprimer le client</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a class="btn btn-primary" href=" {{ path('createcustomer')}} ">Ajouter un nouveau client </a>
+{% endblock %}

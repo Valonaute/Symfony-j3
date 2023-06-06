@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+<h3 class="text-center">Formulaire de modification des clients</h3>
+
+{% endblock title %}
+
+{%  block content %}
+
+{{ form  (formupdate) }}
+
+<a class="btn btn-secondary" href=" {{ path ('customers') }} "> Voir les clients</a>
+{% endblock %}

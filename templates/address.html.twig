@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{%  block content %}
+<p>Vous êtes sur la page des address </p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Adresse 1</th>
+      <th scope="col">Adresse 2</th>
+      <th scope="col">Code postal</th>
+      <th scope="col">Ville</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for oneaddress in address %}
+    <tr>
+      <th scope="row">{{oneaddress.id}}</th>
+      <td>{{oneaddress.address1}}</td>
+      <td>{{oneaddress.address2}}</td>
+      <td>{{oneaddress.zipcode}}</td>
+      <td>{{oneaddress.city}}</td>
+      <td><a class="btn btn-warning m-1" href="{{ path ('updateaddress', {id: oneaddress.id})}}">modifier l'adresse</a>
+          <a class="btn btn-danger  m-1" href="{{ path ('deleteaddress', {id: oneaddress.id})}}">supprimer l'adresse</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a class="btn btn-primary" href=" {{ path('createaddress')}} ">Ajouter une nouvelle adresse </a>
+{% endblock %}

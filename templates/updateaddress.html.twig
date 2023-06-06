@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+<h3 class="text-center">Formulaire de modification des adresses</h3>
+
+{% endblock title %}
+
+{%  block content %}
+
+{# La méthode form permet d'afficher le formulaire dans la vue #}
+
+{{ form  (formupdate) }}
+
+<a class="btn btn-secondary" href=" {{ path ('address') }} "> Voir les adresses</a>
+{% endblock %}
